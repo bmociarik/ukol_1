@@ -1,0 +1,196 @@
+/* nejsme vcerejsi, pouzivame moderni box model */
+html {
+    box-sizing: border-box;
+}
+
+*,
+:after,
+:before {
+    box-sizing: inherit;
+}
+
+
+/* -------------------------------------------------- */
+
+/*
+pouzivame mobile first pristup
+tj. vychozi styly mimo media query jsou pro nejmensi mobilni zarizeni (telefony)
+s pribyvajici sirkou pridavame media query pro...
+tablety:
+@media (min-width: 480px) {
+}
+notebook/pc:
+@media (min-width: 860px) {
+}
+*/
+
+
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0;
+    display: flex;
+   flex-direction:column;
+}
+
+.paticka {
+    text-align: center;
+    font-size: 14px;
+    color: silver;
+}
+
+.paticka a {
+    color: silver;
+}
+
+.recept {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex: 1 1 100%;
+    border: 1px solid white;
+    flex-direction: column;
+    padding: 10px;
+    min-height: 90px;
+    justify-content: space-between;
+}
+
+.recept-hlavny {
+    background-image: url(images/salat.jpg);
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
+    padding: 10px;
+    justify-content: space-between;
+    min-height: 200px;
+}
+
+.recept-hlavny h2 {
+    font-size: 28px;
+}
+
+.recept h2 {
+    font-size: 18px;
+}
+
+h2 {
+    font-weight: 800;
+    font-family: 'raleway';
+    margin: 0;
+    text-shadow: 0px 3px 10px rgba(0, 0, 0, 0.8);
+}
+
+.maly_prvy {
+    background-image: url(images/chlebicek.jpg);
+}
+
+.maly_treti {
+    background-image: url(images/cizrna.jpg);
+}
+
+.maly_druhy {
+    background-image: url(images/tacos.jpg);
+}
+
+.maly_stvrty {
+    background-image: url(images/burger.jpg);
+}
+
+.recept-meta {
+    display: flex;
+    justify-content: space-between;
+    text-shadow: 0px 3px 10px rgba(0, 0, 0, 0.8);
+}
+
+.recepty-male {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.kontajner {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* tablet */
+@media (min-width: 480px) {
+
+    .recept-hlavny {
+        min-height: 250px;
+        padding: 20px;
+    }
+
+    .recepty-male {
+        display: flex;
+        flex: 1 1 100%;
+    }
+
+    .recept {
+        min-height: 150px;
+        flex-basis: 1 1 50%;
+        padding: 20px;
+    }
+
+    .recept-hlavny h2 {
+        font-size: 36px;
+    }
+
+    .recept h2 {
+        font-size: 22px;
+    }
+}
+/* notebook/pc */
+@media (min-width: 860px) {
+
+    .kontajner {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .recept-hlavny {
+        min-height: 400px;
+        padding: 20px;
+        border-right: 1px solid white;
+    }
+
+    .recepty-male {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .recept {
+        min-height: 200px;
+        flex-basis: 50%;
+        padding: 20px;
+        border: none;
+    }
+
+    .maly_prvy,
+    .maly_druhy {
+        border-bottom: 1px solid white;
+    }
+
+    .maly_prvy,
+    .maly_treti {
+
+        border-right: 1px solid white;
+    }
+
+    .recept-hlavny h2 {
+        font-size: 48px;
+    }
+
+    .recept h2 {
+        font-size: 28px;
+    }
+
+}
